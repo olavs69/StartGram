@@ -21,7 +21,7 @@ const LeftSidebar = () => {
   return (
     <nav className="leftsidebar">
       <div className="flex flex-col gap-11">
-        <Link to="/" className="flex gap-3 items-center">
+        <Link to="/" className="flex gap-3 items-center hover:scale-110">
           <img
             src="/assets/images/logo.svg"
             alt="logo"
@@ -29,7 +29,7 @@ const LeftSidebar = () => {
             height={36}
           />
         </Link>
-        <Link to={`/profile/${user.id}`} className="flex gap-3 items-center">
+        <Link to={`/profile/${user.id}`} className="flex gap-3 items-center hover:scale-110">
             <img 
               src={user.imageUrl || '/assets/icons/profile-placeholder.svg'}
               className="h-14 w-14 rounded-full"
@@ -48,15 +48,15 @@ const LeftSidebar = () => {
             const isActive = pathname === link.route;
 
             return (
-              <li key={link.label} className={`leftsidebar-link group ${isActive && 'bg-primary-500'}`}>
+              <li key={link.label} className={`leftsidebar-link group ${isActive && 'bg-primary-500 hover:scale-110'}`}>
                 <NavLink
                   to={link.route}
-                  className="flex gap-4 items-center p-4"
+                  className="flex gap-4 items-center p-4 hover:scale-110"
                 >
                   <img 
                     src={link.imgURL}
                     alt={link.label}
-                    className={`group-hover:invert-white ${isActive && 'invert-white'}`}
+                    className={`group-hover:invert-white hover:scale-110 ${isActive && 'invert-white'}`}
                   />
                   {link.label}
                 </NavLink>
@@ -65,7 +65,7 @@ const LeftSidebar = () => {
           })}
         </ul>
       </div>
-          <Button variant="ghost" className="shad-button_ghost" onClick={() => signOut()}>
+          <Button variant="ghost" className="shad-button_ghost hover:scale-110" onClick={() => signOut()}>
             <img 
               src="/assets/icons/logout.svg"
               alt="logout"
